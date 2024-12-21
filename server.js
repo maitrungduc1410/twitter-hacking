@@ -14,6 +14,12 @@ app.use(
     secret: "your-secret-key",
     resave: false,
     saveUninitialized: false,
+    cookie: {
+      secure: process.env.NODE_ENV === 'production', // Ensures cookies are only sent over HTTPS in production
+      httpOnly: true, // Prevents JavaScript from accessing the cookie
+      sameSite: "strict", // Ensures cookies are sent only with same-site requests
+      maxAge: 1000 * 60 * 60 * 2, // Optional: Set cookie expiration to 2 hours
+    },
   })
 );
 
