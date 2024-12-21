@@ -53,9 +53,7 @@ app.get("/", checkAuth, (req, res) => {
   const referer = req.get("Referer");
   const domain = `http://${req.get("host")}`; // Adjust if using HTTPS
 
-  console.log(referer, 1111);
-
-  // Disable caching
+  // Disable caching. This is very important, else browser will still use cached version
   res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
   res.setHeader("Pragma", "no-cache");
   res.setHeader("Expires", "0");
