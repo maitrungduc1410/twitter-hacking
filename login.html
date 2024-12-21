@@ -16,6 +16,15 @@
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"
     ></script>
+    <script>
+      // Update copyright year dynamically
+      document.addEventListener("DOMContentLoaded", function () {
+        const currentYear = new Date().getFullYear();
+        document.getElementById(
+          "copyright"
+        ).innerHTML = `&copy; ${currentYear}`;
+      });
+    </script>
   </head>
 
   <body>
@@ -70,7 +79,7 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">
         Sign in
       </button>
-      <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
+      <p class="mt-5 mb-3 text-muted text-center" id="copyright"></p>
     </form>
   </body>
 </html>

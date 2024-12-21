@@ -2,17 +2,41 @@
 
 > This project try to know how Twitter prevent user from viewing its source by using \"View Page Source\" on browser
 
-# How to setup
-- Clone the source code to server
-- Make sure your server has install Nginx
-- Copy the setup from my `nginx.default.conf` to your Nginx config file (remember to change the domain name or your server IP to fit yours)
-- Start your Nginx and go to your domain/IP and test
+[![Watch the video](./demo.png)](./demo.mov)
 
-> [!CAUTION]
-> By default nginx uses user `www-data` to run, so make sure you clone the source code to directory that's accessible by `www-data`, Eg. `/var/www/data` is good example
-# Note
-- Nothing much within 3 HTML files and also static folder
-- The trick is in the Nginx config file
+# How to setup
+
+## Docker
+
+Start project by:
+
+```
+docker compose up -d
+```
+
+The app will be accessible at `http://localhost:3000`
+
+## Without Docker
+
+> [!NOTE]  
+> NodeJS is required
+
+First install dependencies:
+
+```
+npm install
+```
+
+Then start the project
+
+```
+npm start
+```
 
 # Demo
-- You can check my demo: https://twitter-hacking.jamesisme.com/
+
+- Online demo: https://twitter-hacking.jamesisme.com
+
+# Older version
+
+The first version is configured using Nginx, the config looks complicated but may give you some idea how to make it works with Nginx. Check `nginx.default.conf`

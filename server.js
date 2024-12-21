@@ -55,6 +55,11 @@ app.get("/", checkAuth, (req, res) => {
 
   console.log(referer, 1111);
 
+  // Disable caching
+  res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+  res.setHeader("Pragma", "no-cache");
+  res.setHeader("Expires", "0");
+
   if (referer && referer.startsWith(domain)) {
     res.sendFile(path.join(__dirname, "/index.html"));
   } else {
