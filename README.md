@@ -2,7 +2,7 @@
 
 > This project try to know how Twitter prevent user from viewing its source by using \"View Page Source\" on browser
 
-[![Watch the video](./demo.png)](./demo.mov)
+https://github.com/user-attachments/assets/c1b20162-22e2-4225-8fe9-3bb0f5b8de92
 
 # How to setup
 
