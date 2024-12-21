@@ -1,62 +1,76 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="shortcut icon" href="https://abs.twimg.com/favicons/favicon.ico">
-    <link href="https://getbootstrap.com/docs/4.0/examples/floating-labels/floating-labels.css" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link href="/static/bootstrap.min.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="/static/favicon.ico" />
+    <link href="/static/floating-labels.css" rel="stylesheet" />
     <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      src="/static/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
+      crossorigin="anonymous"
+    ></script>
   </head>
 
   <body>
-    <form class="form-signin">
+    <form class="form-signin" method="POST" action="/login">
       <div class="text-center mb-4">
-        <img class="mb-4" src="https://abs.twimg.com/icons/apple-touch-icon-192x192.png" alt="" width="72" height="72">
+        <img
+          class="mb-4"
+          src="/static/apple-touch-icon-192x192.png"
+          alt=""
+          width="72"
+          height="72"
+        />
         <h1 class="h3 mb-3 font-weight-normal">Twitter hacking</h1>
-        <p>Login with any fake email. Then when you're inside, try View Page Source and see the magic :)</p>
+        <p>
+          Login with any fake email. Then when you're inside, try View Page
+          Source and see the magic :)
+        </p>
+        <div>
+          Use this user to login:
+          <br />
+          Email: <strong>user@example.com</strong>
+          <br />
+          Password: <strong>password123</strong>
+        </div>
       </div>
 
       <div class="form-label-group">
-        <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+        <input
+          type="email"
+          id="inputEmail"
+          name="email"
+          class="form-control"
+          placeholder="Email address"
+          required
+          autofocus
+        />
         <label for="inputEmail">Email address</label>
       </div>
 
       <div class="form-label-group">
-        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+        <input
+          type="password"
+          id="inputPassword"
+          name="password"
+          class="form-control"
+          placeholder="Password"
+          required
+        />
         <label for="inputPassword">Password</label>
       </div>
 
-      <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me"> Remember me
-        </label>
-      </div>
-      <button class="btn btn-lg btn-primary btn-block" type="button" id="btn-signin">Sign in</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">
+        Sign in
+      </button>
       <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2018</p>
     </form>
-    <script>
-      function generateRandomHash () {
-        var text = ''
-        var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
-
-        for (var i = 0; i < 32; i++)
-          text += possible.charAt(Math.floor(Math.random() * possible.length))
-
-        return text
-      }
-
-      $('#btn-signin').click(function () {
-        var token = generateRandomHash ();
-        document.cookie = 'auth_token=' + token;
-        window.location.href = '/'
-      })
-    </script>
   </body>
 </html>

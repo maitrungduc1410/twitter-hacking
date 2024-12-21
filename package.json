@@ -1,0 +1,27 @@
+{
+  "name": "twitter-hacking",
+  "version": "1.0.0",
+  "description": "> This project try to know how Twitter prevent user from viewing its source by using \\\"View Page Source\\\" on browser",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maitrungduc1410/twitter-hacking.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maitrungduc1410/twitter-hacking/issues"
+  },
+  "homepage": "https://github.com/maitrungduc1410/twitter-hacking#readme",
+  "dependencies": {
+    "express": "^4.21.2",
+    "express-session": "^1.18.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
