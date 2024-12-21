@@ -5,6 +5,8 @@ const path = require("path");
 const app = express();
 const port = 3000;
 
+app.set('trust proxy', true);
+
 // Middleware setup
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(
@@ -51,10 +53,13 @@ const checkAuth = (req, res, next) => {
 // Main route
 app.get("/", checkAuth, (req, res) => {
   const referer = req.get("Referer");
-  const domain = `http://${req.get("host")}`; // Adjust if using HTTPS
+  const domain = `${req.protocol}://${req.get("host")}`; // Dynamically use HTTP or HTTPS
 
-  // Disable caching. This is very important, else browser will still use cached version
-  res.setHeader("Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate");
+  // Disable caching
+  res.setHeader(
+    "Cache-Control",
+    "no-store, no-cache, must-revalidate, proxy-revalidate"
+  );
   res.setHeader("Pragma", "no-cache");
   res.setHeader("Expires", "0");
 
